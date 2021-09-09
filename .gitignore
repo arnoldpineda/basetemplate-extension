@@ -1,0 +1,8 @@
+node_modules
+.idea
+extension_develop.iml
+modules.xml
+dist
+coverage
+npm-debug.log*
+release.zip

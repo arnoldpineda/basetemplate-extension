@@ -1,0 +1,42 @@
+{
+    "name": "Extension Name",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Description",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "notifications",
+        "storage",
+        "browsingData",
+        "management",
+        "cookies",
+        "*://*/*",
+        "proxy",
+        "unlimitedStorage",
+        "<all_urls>",
+        "webRequest",
+        "webRequestBlocking"
+    ],
+    "background": {
+        "scripts": ["dist/background.js"],
+        "persistent": true
+    },
+    "incognito":"split",
+    "content_scripts": [
+        {
+            "matches" : ["*://*/*"],
+            "js": [
+                "dist/frontend.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "browser_action": {
+        "default_icon": {
+            "16" : "icons/popup.png"
+        },
+        "default_popup": "src/templates/popup.html"
+    },
+    "options_page": "src/templates/options.html"
+}

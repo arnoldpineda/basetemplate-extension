@@ -1,0 +1,38 @@
+image: node:9.4.0
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install
+
+stages:
+  - test
+  - release
+
+Test:
+  stage: test
+  only:
+      - master
+  script:
+    - npm i -g jest
+    - jest --coverage
+
+Relase:
+  stage: release
+  only:
+      - master
+  script:
+      - npm i -g webpack
+      - npm i -g webpack-cli
+      - npm i -g babel-loader
+      - npm i -g babel-preset-env
+      - webpack
+  artifacts:
+      paths:
+      - dist/
+      - icons
+      - src/libs
+      - src/templates
+      - manifest.json
