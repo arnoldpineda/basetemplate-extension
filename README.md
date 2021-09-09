@@ -1,5 +1,5 @@
-# basetemplate-extension-mv2
-This is a base template for creating Chrome extensions in manifest_version 2
+# basetemplate-extension
+This is a base template for creating Chrome extensions in manifest_version 2 and 3
 ## src/ Folders
 - [x] classes
 - [x] config
