@@ -1,7 +1,7 @@
 {
     "name": "Extension Name",
     "version": "0.0.1",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "Description",
     "permissions": [
         "tabs",
@@ -11,16 +11,17 @@
         "browsingData",
         "management",
         "cookies",
-        "*://*/*",
         "proxy",
         "unlimitedStorage",
-        "<all_urls>",
         "webRequest",
-        "webRequestBlocking"
+        "declarativeNetRequest"
+    ],
+    "host_permissions": [
+        "*://*/*",
+        "<all_urls>"
     ],
     "background": {
-        "scripts": ["dist/background.js"],
-        "persistent": true
+        "service_worker": "dist/background.js"
     },
     "incognito":"split",
     "content_scripts": [
@@ -32,7 +33,7 @@
             "run_at": "document_end"
         }
     ],
-    "browser_action": {
+    "action": {
         "default_icon": {
             "16" : "icons/popup.png"
         },
