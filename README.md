@@ -4,7 +4,7 @@ This is a base template for creating Chrome extensions in manifest_version 2 and
 - [x] classes
 - [x] config
 - [x] controllers
-- [ ] factories
+- [x] factories
 - [x] helpers
 - [x] libs
 - [ ] reducers
